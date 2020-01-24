@@ -25,7 +25,9 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section><h1>Tries</h1></section>
+        <section>
+            <h1>Tries</h1>
+        </section>
         <section>
             <aside class="notes">
                 - No builtin trie implementation
@@ -110,6 +112,25 @@ boolean search(String word) {
     return cur.isWord;
 }
                 </code> </pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <img src="img/xor.png">
+                <p>Integer to binary string</p>
+                <pre><code class="hljs python" data-trim>
+format(n, 'b') # Python
+                </code></pre>
+                <pre><code class="hljs java" data-trim>
+Integer.toBinaryString(n) // Java
+                </code></pre>
+                <p>Binary string to integer</p>
+                <pre><code class="hljs python" data-trim>
+int(str, 2) # Python
+                </code></pre>
+                <pre><code class="hljs java" data-trim>
+Integer.parseInt(str, 2) // Java
+                </code></pre>
             </section>
         </section>
         <section>
