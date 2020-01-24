@@ -39,12 +39,22 @@
             </ul>
         </section>
         <section>
-            <h2>Schedule</h2>
-            <ul>
-                <li></li>
-            </ul>
+            <p>
+                Given a list of strings, find the longest string that can be built one character at a time by words in the list
+            </p>
+            <pre class="fragment"><code class="hljs" data-trim>words = ["h", "he", "hel", "hell", "hello"]</code></pre>
+            <pre class="fragment"><code class="hljs" data-trim>"h" -> "he" -> "hel" -> "hell" -> "hello"</code></pre>
+            <br>
+            <p class="fragment">
+                If there's a tie in length, return the lexicographically smallest
+            </p>
+            <pre class="fragment"><code class="hljs" data-trim>words = ["a", "ap", "apple", "ape", "apm"]</code></pre>
+            <pre class="fragment"><code class="hljs" data-trim>"a" -> "ap" -> "ape"</code></pre>
         </section>
         <section>
+            <section>
+                <h2>Implementation</h2>
+            </section>
             <section>
 						<pre><code class="hljs java" data-trim data-line-numbers="|2|3">
 class TrieNode {
@@ -68,7 +78,38 @@ class Trie {
                 </code></pre>
             </section>
             <section>
-                2
+                <pre><code class="hljs java" data-trim data-line-numbers="|2|4-5,10|6-8|9|12">
+void insert(String word) {
+    TrieNode cur = root;
+
+    for (int i = 0; i < word.length(); i++) {
+        char c = word.charAt(i);
+        if (cur.children.get(c) == null) {
+            cur.children.put(c, new TrieNode());
+        }
+        cur = cur.children.get(c);
+    }
+
+    cur.isWord = true;
+}
+                </code></pre>
+            </section>
+            <section>
+                <pre><code class="hljs java" data-trim data-line-numbers="2|4-5,9-10|6-8|12">
+boolean search(String word) {
+    TrieNode cur = root;
+
+    for (int i = 0; i < word.length(); i++) {
+        char c = word.charAt(i);
+        if (cur.children.get(c) == null) {
+            return false;
+        }
+        cur = cur.children.get(c);
+    }
+
+    return cur.isWord;
+}
+                </code> </pre>
             </section>
         </section>
         <section>
