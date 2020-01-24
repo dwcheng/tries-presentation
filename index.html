@@ -15,11 +15,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
 </head>
 <body>
@@ -27,14 +27,19 @@
     <div class="slides">
         <section><h1>Tries</h1></section>
         <section>
+            <aside class="notes">
+                - No builtin trie implementation
+                <br>
+                - Just need to search through the tree
+            </aside>
             <h2>Goals</h2>
             <ul>
                 <li>Implement a trie</li>
-                <li>Identifying trie problems</li>
+                <li>Identify trie problems</li>
             </ul>
         </section>
         <section>
-            <h2>Marvelous List</h2>
+            <h2>Schedule</h2>
             <ul>
                 <li></li>
             </ul>
@@ -71,6 +76,7 @@ class Trie {
                 <h2>Additional resources</h2>
             </section>
             <section>
+                <h2>Followup problems</h2>
                 <ul>
                     <li>Implement Trie (Prefix Tree)</li>
                     <li>Word Search II</li>
@@ -89,19 +95,19 @@ class Trie {
 <script src="js/reveal.js"></script>
 
 <script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-        hash: true,
-        transition: "none",
-        dependencies: [
-            {src: 'plugin/markdown/marked.js'},
-            {src: 'plugin/markdown/markdown.js'},
-            {src: 'plugin/highlight/highlight.js'},
-            {src: 'plugin/notes/notes.js', async: true}
-        ]
-    });
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    hash: true,
+    transition: "none",
+    dependencies: [
+      {src: 'plugin/markdown/marked.js'},
+      {src: 'plugin/markdown/markdown.js'},
+      {src: 'plugin/highlight/highlight.js'},
+      {src: 'plugin/notes/notes.js', async: true}
+    ]
+  });
 </script>
 </body>
 </html>
